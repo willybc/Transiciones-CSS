@@ -5,27 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transiciones CSS</title>
     <style>
+
+        body{
+            display:flex;
+            height: 100vh;
+            justify-content: center;
+            /*align-items: center;*/
+        }
         .pelota{
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            background-color: darkred;
-            transition-property: width, height;
-            transition-duration: 1s;
+            /*transition-property: width, height;*/
+            /*transition-duration: 1s;*/
             /*transition-delay: 1s;*/
-            transition-timing-function: ease;
+            /*transition-timing-function: ease;*/
+            transition: 2s;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color:white;
         }
 
-        .pelota:hover{
-            width: 200px;
-            height: 200px;
+        .pelota.A{
+            background: blue;
+            left:0
         }
+
+        .pelota.B{
+            background: red;
+            right:0;
+        }
+
+
+        .canasta:hover .pelota.A{
+            width: 150px;
+            height: 150px;
+            left: calc(50% - 150px);
+        }
+
+         .canasta:hover .pelota.B{
+            width: 150px;
+            height: 150px;
+            right: calc(50% - 150px);
+        }
+
+        .canasta{
+            position: relative;
+            border: 2px solid black;
+            padding:10px;
+            height: 150px;
+            width: 100%;
+        }
+
 
     </style>
 </head>
 <body>
-    <div class="pelota">
-
+    <div class="canasta">
+        <div class="pelota A">Morad</div>
+        <div class="pelota B">Karus</div>
     </div>
 </body>
 </html>
